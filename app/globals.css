@@ -1,27 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .items-auto {
+    align-items: normal;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+nav a{
+  margin-left: 30px;
+  font-weight: 400;
+  color: rgba(190, 198, 251, 0.47);
+}
+
+:root{
+  --bg: #232427;
+}
+
+body{
+  background-color: var(--bg);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: 'Turret Road', sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.inner{
+  position: relative;
+}
+
+.inner::before{
+  content: '';
+  position: absolute;
+  background: linear-gradient(180deg, #FF906C, rgba(255,144,108,0.44), transparent);
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.inner::after{
+  content: '';
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg);
+  border-radius: 50%;
+  width: 90%;
+  height: 90%;
+  z-index: 3;
+}
+
+.inner .mainImage{
+  z-index: 4;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -2%;
+}
+
+.inner .python{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
