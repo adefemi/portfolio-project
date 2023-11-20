@@ -1,4 +1,4 @@
-const endpoint = 'http://localhost:3000/main-path/';
+const endpoint = 'http://localhost:8000/main-path/';
 
 export const getExperiencesUrl = endpoint + 'work-history-url/';
 export const getProjectsUrl = endpoint + 'project-url/';
